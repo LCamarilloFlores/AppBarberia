@@ -4,6 +4,7 @@ const pasoFinal = 3;
 const dominio = "http://localhost:3000"
 
 const cita = {
+    id: '',
     nombre: '',
     fecha: '',
     hora: '',
@@ -22,6 +23,7 @@ function iniciarApp(){
     paginaAnterior(); //Registramos la funcion para cambiar a la pagina anterior
     consultarAPI(); //Consulta la API en el backend de PHP
     nombreCliente(); //Establece el nombre del cliente en el objeto cita
+    idCliente(); //Establece el id del cliente en el objeto cita
     seleccionarFecha(); //Establece la fecha del servicio en el objeto cita
     seleccionarHora(); //Establece la Hora del servicio en el objeto cita
     mostrarResumen(); //Muestra el resumen de la cita
@@ -164,6 +166,10 @@ function nombreCliente(){
     cita.nombre = document.getElementById('nombre').value;
 }
 
+function idCliente(){
+    cita.id = document.getElementById('id').value;
+}
+
 function seleccionarFecha(){
     const formulario = document.querySelector(".formulario");
     const inputFecha = document.querySelector("#fecha");
@@ -285,14 +291,38 @@ function mostrarResumen(){
 }
 
 async function reservarCita(){
+    const {id,fecha,hora,servicios} = cita
+    const idServicios = servicios.map(servicio=>servicio.id)
     const datos = new FormData();
-    datos.append('nombre','Juan')
-    const url = 'http://localhost:3000/api/citas';
+    datos.append('usuarioId',id)
+    datos.append('fecha',fecha)
+    datos.append('hora',hora)
+
+    try {
+        const url = 'http://localhost:3000/api/citas';
     const respuesta = await fetch(url,{
         method: 'POST',
         body: datos
-    })
-    console.log(respuesta)
+    }) 
     const resultado = await respuesta.json();
-    console.log(resultado)
+    if(resultado.resultado){
+        Swal.fire({
+            icon: 'success',
+            title: 'Cita Creada',
+            text: 'Tu cita fue creada correctamente'
+          }).then(()=>{
+            window.location.reload();
+          })
+    }
+    } catch (error) {
+        
+        Swal.fire({
+            icon: 'error',
+            title: 'No se pudo crear la cita',
+            text: `${error}`
+          }).then(()=>{
+            window.location.reload();
+          })
+    }
+    
 }

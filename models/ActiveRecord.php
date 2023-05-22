@@ -142,6 +142,8 @@ class ActiveRecord {
         $query .= join("', '", array_values($atributos));
         $query .= "') ";
 
+        // return "query = ".$query;
+
         // Resultado de la consulta
         $resultado = self::$db->query($query);
 
@@ -168,6 +170,8 @@ class ActiveRecord {
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
         $query .= " LIMIT 1 "; 
 
+        // return "query = ".$query;
+
         // Actualizar BD
         $resultado = self::$db->query($query);
         return $resultado;
@@ -176,6 +180,9 @@ class ActiveRecord {
     // Eliminar un Registro por su ID
     public function eliminar() {
         $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
+
+        // return "query = ".$query;
+        
         $resultado = self::$db->query($query);
         return $resultado;
     }
