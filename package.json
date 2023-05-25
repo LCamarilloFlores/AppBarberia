@@ -28,6 +28,7 @@
     "terser": "^5.3.8"
   },
   "dependencies": {
+    "composer": "^4.1.0",
     "heroku": "^8.1.3"
   }
 }

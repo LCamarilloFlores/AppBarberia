@@ -13,19 +13,24 @@
         background-size: cover;
         background-position: center center;
         @include m.tablet {
-            height:auto;
+            position:fixed;
+            width: 50vw;
+            height:100vh;
         }
     }
 }
 
 .app{
+    scroll-behavior: smooth;
     width:95%;
     margin: 0 auto;
     padding:3rem 0;
+    @include m.tablet {
+        position:absolute;
+        width: 45%;
+        left:52vw
+    }
 }
-
-
-
 
 .imagen no-webp{
     background-image: url(../img/1.jpg);
