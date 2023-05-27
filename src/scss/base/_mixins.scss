@@ -19,6 +19,7 @@
 
 
 @mixin boton($bgColor, $colorTexto) {
+    @content;
     background-color: $bgColor;
     padding: 1.5rem 4rem;
     color: $colorTexto;

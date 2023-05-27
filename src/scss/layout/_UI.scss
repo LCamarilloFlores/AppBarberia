@@ -35,3 +35,17 @@
 .imagen no-webp{
     background-image: url(../img/1.jpg);
 }
+
+.barra{
+    margin: v.$separacion 0;
+    @include m.tablet {
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+    .boton{
+        @include m.boton(v.$negro,v.$blanco){
+            margin: 0;
+        }
+    }
+}

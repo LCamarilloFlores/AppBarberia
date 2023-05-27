@@ -44,9 +44,13 @@ class LoginController{
         $alertas = Usuario::getAlertas();
         $router->render('auth/login',['alertas'=>$alertas]);
     }
+
     public static function logout(Router $router){
-        echo "Desde logout";
+        session_start();
+        $_SESSION = [];
+        header('Location: /');
     }
+
     public static function forgot(Router $router){
         $alertas = [];
         if($_SERVER['REQUEST_METHOD']==='POST'){
@@ -175,5 +179,4 @@ class LoginController{
         $alertas = Usuario::getAlertas();
         $router->render('auth/confirmar',['alertas'=>$alertas]);
     }
-
 }
