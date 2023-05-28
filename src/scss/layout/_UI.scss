@@ -37,8 +37,11 @@
 }
 
 .barra{
-    margin: v.$separacion 0;
+    margin: 0 2rem;
+    text-align: center;
     @include m.tablet {
+        text-align: left;
+        text-wrap:balance;
         display:flex;
         justify-content: space-between;
         align-items:center;
