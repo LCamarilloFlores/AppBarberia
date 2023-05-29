@@ -8,7 +8,14 @@ use MVC\Router;
 class AdminController{
     public static function index(Router $router){
         session_start();
-        $fecha = $_GET['fecha'] ?? date('Y-m-d');
+        if($_GET['fecha']){
+            $fecha = explode("-",$_GET['fecha']); 
+            if(!checkdate($fecha[1],$fecha[2],$fecha[0]))
+            header('Location: /404');
+            $fecha = $_GET['fecha'];
+        }
+        else 
+        $fecha =  date('Y-m-d');
         $consulta = "SELECT citas.id, citas.hora, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
         $consulta .= " usuarios.email, usuarios.telefono, servicios.nombre as servicio, servicios.precio  ";
         $consulta .= " FROM citas  ";

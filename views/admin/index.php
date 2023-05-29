@@ -17,6 +17,12 @@
     </form>
 </div>
 
+<?php if(!$citas) {?>
+    <div class="alerta error">
+        No hay citas en esta fecha.
+    </div>
+<?php  }  ?>
+
 <div id="citas-admin">
     <ul class="citas">
         <?php 
@@ -50,6 +56,10 @@
         if(esUltimo($actual,$proximo)){?>
             <div class="total">Total: </div>
             <div class="precio-total">$ <?php echo number_format($total,2);?></div>
+            <form action="/api/eliminar" method="POST">
+                <input type="hidden" name="id" value="<?php echo $cita->id;?>">
+                <input type="submit" class="boton-eliminar" value="Eliminar">
+            </form>   
         <?php 
         
         $total = 0; }?>
@@ -59,4 +69,5 @@
     </ul>
 </div>
 
-<?php $script="<script src='build/js/buscador.js'></script>";
+<?php $script="
+    <script src='build/js/buscador.js'></script>";
