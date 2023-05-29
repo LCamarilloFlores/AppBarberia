@@ -1,0 +1,39 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.citas{
+    list-style: none;
+    padding: 0;
+    li{
+        padding: 1rem;
+        padding-bottom: 2rem;
+        border-top: 1px solid v.$blanco;
+        p{
+            font-weight: v.$bold;
+            color: v.$azul;
+        }
+        span{
+            font-weight: v.$regular;
+            color: v.$blanco;
+        }
+        &:hover{
+            background-color: lighten(v.$negro,5);
+        }
+    }
+    .servicio{
+        width: 100%;
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    .total{
+        padding-top: 1rem;
+        text-align: right;
+        font-weight: v.$bold;
+        padding-right: 2rem;
+    }
+    .precio-total{
+        padding-top: 1rem;
+    }
+}
