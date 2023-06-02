@@ -21,6 +21,7 @@
             background-color: lighten(v.$negro,5);
         }
     }
+
     .servicio{
         width: 100%;
         font-size: 2rem;
@@ -37,3 +38,14 @@
         padding-top: 1rem;
     }
 }
+
+.servicios{
+    @extend .citas;
+}
+
+// .acciones{
+//     .boton{
+//         margin: 0;
+//         padding: 0;
+//     }
+// }

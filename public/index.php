@@ -2,11 +2,12 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use MVC\Router;
 use Controllers\APIController;
 use Controllers\CitaController;
-use Controllers\LoginController;
 use Controllers\AdminController;
-use MVC\Router;
+use Controllers\LoginController;
+use Controllers\ServiciosController;
 
 $router = new Router();
 
@@ -27,6 +28,14 @@ $router->post('/crear-cuenta',[LoginController::class,'crear']);
 //Confirmar cuenta
 $router->get('/confirmar',[LoginController::class,'confirmar']);
 $router->get('/mensaje',[LoginController::class,'mensaje']);
+
+//Zona de servicios
+$router->get('/servicios',[ServiciosController::class,'index']);
+$router->get('/servicios/crear',[ServiciosController::class,'crear']);
+$router->post('/servicios/crear',[ServiciosController::class,'crear']);
+$router->get('/servicios/actualizar',[ServiciosController::class,'actualizar']);
+$router->post('/servicios/actualizar',[ServiciosController::class,'actualizar']);
+$router->post('/servicios/eliminar',[ServiciosController::class,'eliminar']);
 
 //Zona Privada
 $router->get('/cita',[CitaController::class,'index']);

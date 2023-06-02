@@ -37,8 +37,9 @@ class  APIController{
         {
             $id = $_POST['id'];
             $cita = Cita::find($id);
-            $cita->eliminar();
-            header('Location:' . $_SERVER['HTTP_REFERER']);
+            $resultado = $cita->eliminar();
+            // header('Location:' . $_SERVER['HTTP_REFERER']);
+            echo json_encode($resultado);
         }
     }
 }

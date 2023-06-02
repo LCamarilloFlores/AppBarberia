@@ -56,10 +56,12 @@
         if(esUltimo($actual,$proximo)){?>
             <div class="total">Total: </div>
             <div class="precio-total">$ <?php echo number_format($total,2);?></div>
-            <form action="/api/eliminar" method="POST">
                 <input type="hidden" name="id" value="<?php echo $cita->id;?>">
-                <input type="submit" class="boton-eliminar" value="Eliminar">
-            </form>   
+                <input 
+                type="submit" 
+                class="boton-eliminar" 
+                data-item="<?php echo $cita->id;?>"
+                value="Eliminar"> 
         <?php 
         
         $total = 0; }?>
@@ -70,4 +72,6 @@
 </div>
 
 <?php $script="
-    <script src='build/js/buscador.js'></script>";
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src='build/js/buscador.js'></script>
+    <script src='build/js/botonEliminar.js'></script>";

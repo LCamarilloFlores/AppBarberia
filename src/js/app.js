@@ -84,7 +84,6 @@ function paginaSiguiente() {
     if (paso >= pasoFinal) return;
     else {
       paso++;
-      console.log(paso);
       botonesPaginador();
     }
   });
@@ -289,7 +288,7 @@ async function reservarCita() {
   datos.append("servicios", idServicios);
 
   try {
-    const url = "http://localhost:3000/api/citas";
+    const url = dominio + "/api/citas";
     const respuesta = await fetch(url, {
       method: "POST",
       body: datos,

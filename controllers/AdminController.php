@@ -8,6 +8,7 @@ use MVC\Router;
 class AdminController{
     public static function index(Router $router){
         session_start();
+        isAdmin();
         if($_GET['fecha']){
             $fecha = explode("-",$_GET['fecha']); 
             if(!checkdate($fecha[1],$fecha[2],$fecha[0]))

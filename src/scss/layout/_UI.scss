@@ -47,8 +47,24 @@
         align-items:center;
     }
     .boton{
-        @include m.boton(v.$negro,v.$blanco){
-            margin: 0;
-        }
+        @include m.boton(v.$negro,v.$blanco);
+        margin: 1rem;
+    }
+}
+
+.barra-servicios{
+    margin-bottom: v.$separacion;
+    @include m.tablet {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .boton{
+        justify-content: center;
+        display:flex;
+        align-items: center;
+        flex:1 1;
+        margin: 0.5rem;
+        border-radius: 1rem;
     }
 }

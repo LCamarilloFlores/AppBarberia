@@ -5,8 +5,8 @@
     color:v.$blanco;
     width:100%;
     display: block;
-    margin-bottom: 2rem;
     text-align: center;
+    margin: calc(v.$separacion/2) 0;
     text-transform: uppercase;
     font-weight: v.$bold;
     &.error{

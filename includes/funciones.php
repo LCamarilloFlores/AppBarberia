@@ -24,3 +24,9 @@ function esUltimo($actual,$proximo){
     return true;
     return false;
 }
+
+
+function isAdmin(): void {
+    if(!isset($_SESSION['admin']))
+    header('Location: /');
+}
