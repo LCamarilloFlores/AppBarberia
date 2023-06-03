@@ -10,12 +10,16 @@
 <p>Nombre: <span><?php echo $servicio->nombre;?></span></p>
 <p>Precio: <span>$ <?php echo $servicio->precio;?></span></p>
 
-<div class="acciones">
+<div class="acciones-servicios">
     <a href="/servicios/actualizar?id=<?php echo $servicio->id;?>" class="boton">Actualizar</a>
-    <form action="/servicios/eliminar">
-        <input type="submit" value="Eliminar" class="boton-eliminar">
-    </form>
+        <input type="submit" value="Eliminar" 
+        data-item="<?php echo $servicio->id;?>" 
+        class="boton-eliminar">
 </div>
     </li>
     <?php }?>
 </ul>
+
+<?php $script = "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src='build/js/botonEliminarServicios.js'></script>";

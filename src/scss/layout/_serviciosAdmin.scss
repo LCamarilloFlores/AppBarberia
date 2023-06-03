@@ -26,7 +26,7 @@
         width: 100%;
         font-size: 2rem;
         display: grid;
-        grid-template-columns: 4fr 1fr;
+        grid-template-columns: 4fr 2fr;
     }
     .total{
         padding-top: 1rem;
@@ -43,9 +43,8 @@
     @extend .citas;
 }
 
-// .acciones{
-//     .boton{
-//         margin: 0;
-//         padding: 0;
-//     }
-// }
+.acciones-servicios{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+}

@@ -54,7 +54,7 @@
 
 .barra-servicios{
     margin-bottom: v.$separacion;
-    @include m.tablet {
+    @include m.desktop {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
