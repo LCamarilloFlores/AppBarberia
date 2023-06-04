@@ -32,6 +32,7 @@ class LoginController{
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['login'] = true;
                         if($usuario->admin==='0'){
+                            $_SESSION['admin'] = false;
                             header('Location: /cita');
                         }
                         else{
