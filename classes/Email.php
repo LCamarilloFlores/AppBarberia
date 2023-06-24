@@ -5,7 +5,7 @@ namespace Classes;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class Email{
-    protected const WebHost = "https://boiling-coast-81986-219e2b794658.herokuapp.com/";
+    protected const WebHost = "https://boiling-coast-81986-219e2b794658.herokuapp.com";
     public $email;
     public $nombre;
     public $token;
