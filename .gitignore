@@ -9,7 +9,3 @@ gulpfile.js
 package.json
 package-lock.json
 .env
-includes/database.php
-AppBarberia.zip
-baseAppSalon.sql
-vendor.zip
