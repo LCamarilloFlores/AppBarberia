@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 class Email
 {
-    protected const WebHost = "http://localhost:3000";
+    protected const WebHost = "https://barberia.it-solutions.pw";
     public $email;
     public $nombre;
     public $token;
