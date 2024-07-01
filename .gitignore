@@ -11,6 +11,5 @@ package-lock.json
 .env
 includes/database.php
 AppBarberia.zip
-Dockerfile
 baseAppSalon.sql
 vendor.zip
