@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $db = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_BD']);
+    $db = mysqli_connect('srv872.hstgr.io', 'u530132658_itadmin', 'bNLASG0102$', 'u530132658_itdatabase');
 } catch (Exception $e) {
     debuguear($e);
 }
