@@ -1,4 +1,4 @@
-const dominio = "https://barberia.it-solutions.pw:3000";
+const dominio = "https://barberia.it-solutions.pw";
 function cargarBotones() {
   document.querySelectorAll(".boton-eliminar").forEach((o) => {
     o.addEventListener("click", (o) => {

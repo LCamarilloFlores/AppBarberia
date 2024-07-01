@@ -1,7 +1,7 @@
 let paso = 1;
 const pasoInicial = 1,
   pasoFinal = 3,
-  dominio = "https://barberia.it-solutions.pw:3000",
+  dominio = "https://barberia.it-solutions.pw",
   cita = { id: "", nombre: "", fecha: "", hora: "", servicios: [] };
 function iniciarApp() {
   mostrarSeccion(),
